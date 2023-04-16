@@ -46,8 +46,9 @@ class Program
         {
             string someN = Console.ReadLine();
             int.TryParse(someN, out int z);
-            double length = 5; // ???
-        
+            double fixLength = 0.005; // ???
+            int length = Convert.ToInt32(fixLength);
+            Console.WriteLine(length);
             //
             //Arrow arrow = new Arrow(10, 3, 5);
             //int headArr = (int)HeadType.April;
