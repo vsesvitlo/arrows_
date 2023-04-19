@@ -14,30 +14,58 @@ class Program
             int length = Convert.ToInt32(fixLength);
             Console.WriteLine(length);
 
+            Random choice = new Random();
 
-            int headArrSteel = (int)HeadType.Steel;
+            /*int headArrSteel = (int)HeadType.Steel;
             int headArrWood = (int)HeadType.Wood;
             int headArrObsidian = (int)HeadType.Obsidian;
 
             int fletchArrPlastic = (int)FletchingType.Plastic;
             int fletchArrTurkey = (int)FletchingType.Turkey;
-            int fletchArrGoose = (int)FletchingType.Goose;
-            Arrow arrow = new Arrow(headArrSteel, fletchArrPlastic, length);
-            int sum = arrow._arrowhead_type + arrow._fletching_type + length;
+            int fletchArrGoose = (int)FletchingType.Goose;*/
+
+
+            //string[] headArr = { "int headArrSteel", "int headArrWood", "int headArrObsidian" };
+            int[] headArr = { (int)HeadType.Steel, (int)HeadType.Wood, (int)HeadType.Obsidian };
+            int[] fletchArr = { (int)FletchingType.Plastic, (int)FletchingType.Turkey, (int)FletchingType.Goose };
+
+
+
+            int hIndex = choice.Next(headArr.Length);
+            int fIndex = choice.Next(fletchArr.Length);
+
+            //int.TryParse(headArr[hIndex], out int newHead);
+            //int resultHeadArr = Convert.ToInt32(newHead);
+            //int.TryParse(headArr[fIndex], out int newFletch);
+            //int resultFletchArr = Convert.ToInt32(newFletch);
+
+
+            Console.WriteLine(headArr[hIndex]);
+            Console.WriteLine(fletchArr[fIndex]);
+            //Console.WriteLine("{0}", headArr[hIndex]);
+            // Console.WriteLine("{0}", fletchArr[fIndex]);
+
+
+            Arrow arrow = new Arrow(headArr[hIndex], fletchArr[fIndex], length);
+
+            int sum = headArr[hIndex] + fletchArr[fIndex] + length;
+            //int sum = arrow._arrowhead_type + arrow._fletching_type + length;
             Console.WriteLine(sum);
 
-           
-            
+
+
+
+
         }
     }
-    
+}
         
 
     
-    Random choiceHead = new Random();
-    Random choiceFletch = new Random();
+    //Random choiceHead = new Random();
+    //Random choiceFletch = new Random();
     //Console.WriteLine(" {0} ", headArr.Next());
-}
+
 
 /*// 
  * 
