@@ -3,7 +3,7 @@
 using System.Threading;
 
 //TODO: fix namespece to Arrows in ALL FILES
-namespace Arrows_new_new;
+namespace Arrows;
 class Program
 {
     static void Main(string[] args)

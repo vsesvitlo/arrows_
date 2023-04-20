@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Arrows_new_new;
+namespace Arrows;
 
 public class Arrow
 {
