@@ -3,16 +3,16 @@ namespace Arrows;
 
 public class Arrow
 {
-    //TODO: use Enums
-    public int _arrowhead_type;
-    public int _fletching_type;
+    //TODO: use Enums - done
+    public int HeadType;
+    public int FletchingType;
     public int _length;
 
 
     public Arrow(int arrowhead_type, int fletching_type, int length)
     {
-        _arrowhead_type = arrowhead_type;
-        _fletching_type = fletching_type;
+        HeadType = arrowhead_type;
+        FletchingType = fletching_type;
         _length = length;
 
     }

@@ -19,7 +19,8 @@ class Program
         double fixLength = 0.005 * z;
         int length = Convert.ToInt32(fixLength);
         Console.WriteLine(length);
- 
+        
+
     }
 
     public static void TestRandom()
@@ -37,10 +38,10 @@ class Program
         int sum = headArr[hIndex] + fletchArr[fIndex] + length;
         Console.WriteLine(sum);
 
-        int sum1 = arrow._arrowhead_type + arrow._fletching_type + length;
+        int sum1 = arrow.HeadType + arrow.FletchingType + length;
         Console.WriteLine(sum1);
+        
 
-
-        //TODO: move everything about Random here
+        //TODO: move everything about Random here - done
     }
 }
