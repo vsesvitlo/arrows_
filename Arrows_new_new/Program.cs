@@ -2,12 +2,18 @@
 
 using System.Threading;
 
+//TODO: fix namespece to Arrows in ALL FILES
 namespace Arrows_new_new;
 class Program
 {
     static void Main(string[] args)
     {
-        {
+        // TestRandom(); uncomment when testing form console
+
+        //TODO: Remove extra {}
+
+        //TODO: add user input
+        
             string someN = Console.ReadLine();
             int.TryParse(someN, out int z);
             double fixLength = 0.005 * z;
@@ -32,7 +38,12 @@ class Program
             Console.WriteLine(sum);
             Console.WriteLine(sum1);
 
-        }
+       
+    }
+
+    public static void TestRandom()
+    {
+        //TODO: move everything about Random here
     }
 }
 /*int headArrSteel = (int)HeadType.Steel;

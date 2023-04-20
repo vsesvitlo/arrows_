@@ -1,6 +1,5 @@
 ﻿using System;
 namespace Arrows_new_new
-
 {
     public enum HeadType
         {
