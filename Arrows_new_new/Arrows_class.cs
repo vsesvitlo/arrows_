@@ -19,10 +19,18 @@ public class Arrow
 
     //TODO: add GetCost - done
 
-   // public static float GetCost
-   // {
+   public static float GetCost()
+  {
+   double fixLength = 0.05 * z;
+    float length = Convert.ToSingle(fixLength);
+    Console.WriteLine(length);
+            Arrow arrow = new Arrow(arrowhead_type, fletching_type, length);
 
-   // }
+    Console.WriteLine((arrowhead_type, fletching_type, length));
+
+            float sum = arrow.HeadType + arrow.FletchingType + length;
+    Console.WriteLine(sum);
+  }
 
 }
 

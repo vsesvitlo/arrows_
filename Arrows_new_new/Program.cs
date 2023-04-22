@@ -1,6 +1,7 @@
 ﻿using System;
 
 using System.Threading;
+using System.Xml.Linq;
 
 //TODO: fix namespece to Arrows in ALL FILES - done
 namespace Arrows;
@@ -67,31 +68,27 @@ class Program
                     break;
             }
 
-            //float length = 0.05f * z;
-            double fixLength = 0.05 * z;
-            float length = Convert.ToSingle(fixLength);
-            Console.WriteLine(length);
-            Arrow arrow = new Arrow(arrowhead_type, fletching_type, length);
+            /*double fixLength = 0.05 * z;
+     float length = Convert.ToSingle(fixLength);
+     Console.WriteLine(length);
+             Arrow arrow = new Arrow(arrowhead_type, fletching_type, length);
 
-            Console.WriteLine((arrowhead_type, fletching_type, length));
+     Console.WriteLine((arrowhead_type, fletching_type, length));
 
-
-            //float  = Convert.ToSingle(arrowhead_type);
-            //float  = Convert.ToSingle(fletching_type);
-            float sum = arrow.HeadType + arrow.FletchingType + length;
-            Console.WriteLine(sum);
-
-            //int sum = arrow.HeadType + arrow.FletchingType + length;
-            //Console.WriteLine(sum);
+             float sum = arrow.HeadType + arrow.FletchingType + length;
+     Console.WriteLine(sum);*/
+            /*get { return length; }
+            set { length = value; }*/
 
         }
         //Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs");???
     }
     
     public static void TestRandom()
-        //(length)
+    //(length)
     {
-
+        
+            
         Random choice = new Random();
         int[] headArr = { (int)HeadType.Steel, (int)HeadType.Wood, (int)HeadType.Obsidian };
         int[] fletchArr = { (int)FletchingType.Plastic, (int)FletchingType.Turkey, (int)FletchingType.Goose };
@@ -100,9 +97,9 @@ class Program
         int fIndex = choice.Next(fletchArr.Length);
         Console.WriteLine(headArr[hIndex]);
         Console.WriteLine(fletchArr[fIndex]);
-        //Arrow arrowRandom = new Arrow(headArr[hIndex], fletchArr[fIndex], length);
-       // int sumRandom = headArr[hIndex] + fletchArr[fIndex] + length;
-       //Console.WriteLine(sumRandom);
+        Arrow arrowRandom = new Arrow(headArr[hIndex], fletchArr[fIndex], length);
+        int sumRandom = headArr[hIndex] + fletchArr[fIndex] + length;
+       Console.WriteLine(sumRandom);
 
        
 
