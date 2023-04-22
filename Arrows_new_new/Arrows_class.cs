@@ -14,9 +14,12 @@ public class Arrow
         HeadType = arrowhead_type;
         FletchingType = fletching_type;
         _length = length;
-
+        
     }
 
     //TODO: add GetCost
+
+    
+
 }
 
