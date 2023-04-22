@@ -68,8 +68,8 @@ class Program
             }
 
             //float length = 0.05f * z;
-            float fixLength = 0.05f * z;
-            int length = Convert.ToInt32(fixLength);
+            double fixLength = 0.05 * z;
+            float length = Convert.ToSingle(fixLength);
             Console.WriteLine(length);
             Arrow arrow = new Arrow(arrowhead_type, fletching_type, length);
 
@@ -87,12 +87,7 @@ class Program
         }
         //Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs");???
     }
-    /*public static void GetCost()
-    {
-
-
-    }*/
-
+    
     public static void TestRandom()
         //(length)
     {

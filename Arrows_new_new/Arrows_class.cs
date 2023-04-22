@@ -4,12 +4,12 @@ namespace Arrows;
 public class Arrow
 {
     //TODO: use Enums - done
-    public int HeadType;
-    public int FletchingType;
-    public int _length;
+    public float HeadType;
+    public float FletchingType;
+    public float _length;
 
 
-    public Arrow(int arrowhead_type, int fletching_type, int length)
+    public Arrow(float arrowhead_type, float fletching_type, float length)
     {
         HeadType = arrowhead_type;
         FletchingType = fletching_type;
@@ -17,9 +17,12 @@ public class Arrow
         
     }
 
-    //TODO: add GetCost
+    //TODO: add GetCost - done
 
-    
+   // public static float GetCost
+   // {
+
+   // }
 
 }
 
