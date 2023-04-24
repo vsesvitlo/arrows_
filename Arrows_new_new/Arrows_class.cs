@@ -3,7 +3,7 @@ namespace Arrows;
 
 public class Arrow
 {
-    //TODO: use Enums - done
+    //TODO: use Enums 
     public float HeadType;
     public float FletchingType;
     public float _length;
@@ -17,19 +17,18 @@ public class Arrow
         
     }
 
-    //TODO: add GetCost - done
+    //TODO: add GetCost 
 
-   public static float GetCost()
+   public float GetCost()
   {
-   double fixLength = 0.05 * z;
-    float length = Convert.ToSingle(fixLength);
-    Console.WriteLine(length);
-            Arrow arrow = new Arrow(arrowhead_type, fletching_type, length);
 
-    Console.WriteLine((arrowhead_type, fletching_type, length));
+           // Arrow arrow = new Arrow(this.HeadType, this.FletchingType, _length);
 
-            float sum = arrow.HeadType + arrow.FletchingType + length;
+    Console.WriteLine((this.HeadType, this.FletchingType, _length));
+
+            float sum = this.HeadType + this.FletchingType + _length;
     Console.WriteLine(sum);
+        return sum;
   }
 
 }

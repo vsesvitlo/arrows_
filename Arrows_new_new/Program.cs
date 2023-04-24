@@ -67,7 +67,11 @@ class Program
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
+            float length = 0.05f * z;
 
+            Console.WriteLine(length);
+          var arrow = new Arrow (arrowhead_type, fletching_type, z);
+            float result = arrow.GetCost();
             /*double fixLength = 0.05 * z;
      float length = Convert.ToSingle(fixLength);
      Console.WriteLine(length);
@@ -87,8 +91,8 @@ class Program
     public static void TestRandom()
     //(length)
     {
-        
-            
+
+        int length = 100;
         Random choice = new Random();
         int[] headArr = { (int)HeadType.Steel, (int)HeadType.Wood, (int)HeadType.Obsidian };
         int[] fletchArr = { (int)FletchingType.Plastic, (int)FletchingType.Turkey, (int)FletchingType.Goose };

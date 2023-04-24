@@ -5,6 +5,8 @@ VisualStudioVersion = 25.0.1705.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arrows", "Arrows_new_new\Arrows.csproj", "{AE36C3E6-F5FC-44D1-B67F-96FE9850CC2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4828569F-1C6D-4C0E-B422-3EAF1C1F45AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE36C3E6-F5FC-44D1-B67F-96FE9850CC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE36C3E6-F5FC-44D1-B67F-96FE9850CC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE36C3E6-F5FC-44D1-B67F-96FE9850CC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4828569F-1C6D-4C0E-B422-3EAF1C1F45AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4828569F-1C6D-4C0E-B422-3EAF1C1F45AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4828569F-1C6D-4C0E-B422-3EAF1C1F45AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4828569F-1C6D-4C0E-B422-3EAF1C1F45AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
