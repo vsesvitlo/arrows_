@@ -17,16 +17,19 @@ class Program
 
         Console.WriteLine("What type of arrow`s head do you want? Please, choose: 1 - for steel, 2 - for wood, 3 - for odsidian");
         string chooseHead = Console.ReadLine();
-        int.TryParse(chooseHead, out int arrowhead_type);
+        float arrowhead_type = Convert.ToSingle(chooseHead);
+        //int.TryParse(chooseHead, out int arrowhead_type);
         Console.WriteLine("What type of arrow`s fletch do you want? Please, choose: 1 - for plastic, 2 - for turkey, 3 - for goose");
         string chooseFletch = Console.ReadLine();
-        int.TryParse(chooseFletch, out int fletching_type);
+        float fletching_type = Convert.ToSingle(chooseFletch);
+        //int.TryParse(chooseFletch, out int fletching_type);
         Console.WriteLine("How long of arrow`s shaft do you want? Please, enter the length between 60 and 100 cm");
         string someN = Console.ReadLine();
-        int.TryParse(someN, out int z);
+        float length = Convert.ToSingle(someN);
+        //int.TryParse(someN, out int length);
        
         if ((arrowhead_type == 1) || (arrowhead_type == 2) || (arrowhead_type == 3) || (fletching_type == 1) ||
-            (fletching_type == 2) || (fletching_type == 3) || (z >= 60) && (z <= 100))
+            (fletching_type == 2) || (fletching_type == 3) || (length >= 60) && (length <= 100))
 
         {
             switch (arrowhead_type)
@@ -67,22 +70,11 @@ class Program
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-            float length = 0.05f * z;
+            float lengthSum = 0.05f * length;
 
-            Console.WriteLine(length);
-          var arrow = new Arrow (arrowhead_type, fletching_type, z);
-            float result = arrow.GetCost();
-            /*double fixLength = 0.05 * z;
-     float length = Convert.ToSingle(fixLength);
-     Console.WriteLine(length);
-             Arrow arrow = new Arrow(arrowhead_type, fletching_type, length);
-
-     Console.WriteLine((arrowhead_type, fletching_type, length));
-
-             float sum = arrow.HeadType + arrow.FletchingType + length;
-     Console.WriteLine(sum);*/
-            /*get { return length; }
-            set { length = value; }*/
+            Console.WriteLine(lengthSum);
+          var arrow = new Arrow (arrowhead_type, fletching_type, length);
+          //  float result = arrow.GetCost();
 
         }
         //Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs");???

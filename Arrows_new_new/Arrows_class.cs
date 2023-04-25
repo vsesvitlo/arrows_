@@ -3,33 +3,40 @@ namespace Arrows;
 
 public class Arrow
 {
-    //TODO: use Enums 
-    public float HeadType;
-    public float FletchingType;
+    //TODO: use Enums - done
+
+
+    public HeadType _arrowhead_type;
+    public FletchingType _fletching_type;
     public float _length;
 
 
-    public Arrow(float arrowhead_type, float fletching_type, float length)
+
+
+
+
+    public Arrow(HeadType arrowhead_type, FletchingType fletching_type, float length)
     {
-        HeadType = arrowhead_type;
-        FletchingType = fletching_type;
+        _arrowhead_type = arrowhead_type;
+        _fletching_type = fletching_type;
         _length = length;
-        
+
     }
 
-    //TODO: add GetCost 
+
+    //TODO: add GetCost - done
 
    public float GetCost()
-  {
+    {
+        //Arrow arrow = new Arrow(HeadType., this.FletchingType, _length);
 
-           // Arrow arrow = new Arrow(this.HeadType, this.FletchingType, _length);
+        Console.WriteLine((this._arrowhead_type, this._fletching_type, _length));
 
-    Console.WriteLine((this.HeadType, this.FletchingType, _length));
-
-            float sum = this.HeadType + this.FletchingType + _length;
-    Console.WriteLine(sum);
+        float sum = this._arrowhead_type + this._fletching_type + _length;
+        Console.WriteLine(sum);
         return sum;
-  }
-
+    }
 }
+
+
 
