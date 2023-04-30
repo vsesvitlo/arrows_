@@ -1,19 +1,17 @@
 ﻿using System;
-
 using System.Threading;
 using System.Xml.Linq;
 
-//TODO: fix namespece to Arrows in ALL FILES - done
 namespace Arrows;
 class Program
 {
     public static void Main(string[] args)
     {
-        // TestRandom(); uncomment when testing form console
+        //TODO: two modes of program
+        // 1 - Random
+        // 2 - Manual, which already is used
+        // Use methods RunRandomApplicationMode, RunManualApplicationMode
 
-        //TODO: Remove extra {} - done
-
-        //TODO: add user input - done
 
         Console.WriteLine("What type of arrow`s head do you want? Please, choose: 1 - for steel, 2 - for wood, 3 - for odsidian");
         string chooseHead = Console.ReadLine();
@@ -91,8 +89,13 @@ class Program
         
         //Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs"); //???
     }
+
+    public static void RunManualApplicationMode()
+    {
+        //TODO: move here
+    }
     
-    public static void TestRandom()
+    public static void RunRandomApplicationMode()
     //(length)
     {
 
@@ -108,9 +111,5 @@ class Program
        // Arrow arrowRandom = new Arrow(headArr[hIndex], fletchArr[fIndex], length);
        // int sumRandom = headArr[hIndex] + fletchArr[fIndex] + length;
        //Console.WriteLine(sumRandom);
-
-       
-
-        //TODO: move everything about Random here - done
     }
 }
