@@ -12,7 +12,6 @@ class Program
         // 2 - Manual, which already is used
         // Use methods RunRandomApplicationMode, RunManualApplicationMode
 
-
         Console.WriteLine("What type of arrow`s head do you want? Please, choose: 1 - for steel, 2 - for wood, 3 - for odsidian");
         string chooseHead = Console.ReadLine();
         //float arrowhead_type = Convert.ToSingle(chooseHead);
@@ -26,15 +25,13 @@ class Program
      //float length = Convert.ToSingle(someN);
 
         int.TryParse(someN, out int lengthForCalculation);
-
+        
         HeadType arrowhead_type;
         FletchingType fletching_type;
 
-
-
-        if ((chooseHeadNumber == 1) || (chooseHeadNumber == 2) || (chooseHeadNumber == 3) ||
-            (chooseFletchNumber == 1) || (chooseFletchNumber == 2) || (chooseFletchNumber == 3) ||
-            (lengthForCalculation >= 60) && (lengthForCalculation <= 100))
+        if (((chooseHeadNumber == 1) || (chooseHeadNumber == 2) || (chooseHeadNumber == 3)) &&
+            ((chooseFletchNumber == 1) || (chooseFletchNumber == 2) || (chooseFletchNumber == 3)) &&
+            ((lengthForCalculation >= 60) && (lengthForCalculation <= 100)))
 
         {
 
@@ -42,15 +39,12 @@ class Program
             {
                 case (1):
                     arrowhead_type = HeadType.Steel;
-                    Console.WriteLine(arrowhead_type);
                     break;
                 case (2):
                     arrowhead_type = HeadType.Wood;
-                    Console.WriteLine(arrowhead_type);
                     break;
                 case (3):
                     arrowhead_type = HeadType.Obsidian;
-                    Console.WriteLine(arrowhead_type);
                     break;
                 
                 default:
@@ -75,19 +69,15 @@ class Program
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-            Console.WriteLine(fletching_type);
-            float length = 0.05f * lengthForCalculation;
-
-            Console.WriteLine(length);
-
-
-           var arrow = new Arrow (arrowhead_type, fletching_type, length);
-           float result = arrow.GetCost();
-           Console.WriteLine(result);
+            var arrow = new Arrow (arrowhead_type, fletching_type, lengthForCalculation);
+            float result = arrow.GetCost();
+           Console.WriteLine(result); 
 
         }
-        
-        //Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs"); //???
+        else
+        {
+            Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs");
+        }
     }
 
     public static void RunManualApplicationMode()

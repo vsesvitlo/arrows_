@@ -74,7 +74,7 @@ public class UnitTest1
     public void TestSum()
     {
         Arrow check = new Arrow(HeadType.Obsidian, FletchingType.Goose, 88);
-        var condition = check.GetCost() == 12.4; // 5 + 3 + 88 * 0.05f; 
+        var condition = check.GetCost() == 12.4f; // 5 + 3 + 88 * 0.05f; 
         Assert.True(condition);
     }
     [Fact]
