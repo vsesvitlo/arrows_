@@ -14,15 +14,16 @@ public class Arrow
         _fletching_type = fletching_type;
         _length = length;
     }
-    public float GetCost()
+    /*public float GetCost()
     {
 
         int headTypeArrResult = (int)this._arrowhead_type;
         int fletchTypeArrResult = (int)this._fletching_type;
         float sum = headTypeArrResult + fletchTypeArrResult + (_length * 0.05f);
         return sum;
-    }
+    }*/
 }
+
 
 
 
