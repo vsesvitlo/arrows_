@@ -23,7 +23,7 @@ class Program
             Console.WriteLine("Please, enter the correct values for choosing calculation");
         }
     }
-    //TODO: two modes of program
+    //TODO: two modes of program - done
     // 1 - Random
     // 2 - Manual, which already is used
     // Use methods RunRandomApplicationMode, RunManualApplicationMode
