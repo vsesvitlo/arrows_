@@ -83,8 +83,9 @@ class Program
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-            var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
-            float result = arrow.GetCost();
+            var arrow = new Trader(arrowhead_type, fletching_type, lengthForCalculation);
+
+            float result = arrow.HasArrow();
             Console.WriteLine(result);
         }
         else
@@ -113,4 +114,5 @@ class Program
         // int sumRandom = headArr[hIndex] + fletchArr[fIndex] + length;
         //Console.WriteLine(sumRandom);
     }
+
 }
