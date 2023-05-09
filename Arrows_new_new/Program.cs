@@ -27,6 +27,11 @@ class Program
     // 1 - Random
     // 2 - Manual, which already is used
     // Use methods RunRandomApplicationMode, RunManualApplicationMode
+
+
+    //Arrow[];
+
+
     public static void RunManualApplicationMode()
     {
         //TODO: move here
@@ -116,3 +121,4 @@ class Program
     }
 
 }
+
