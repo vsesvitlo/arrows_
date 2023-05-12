@@ -1,60 +1,61 @@
 ﻿using System;
 namespace Arrows
 {
-
-
     public class Trader
     {
-   
-        public HeadType _arrowhead_type;
-        public FletchingType _fletching_type;
-        public float _length;
+        Arrow[] arrows = new[]
+        {
+            new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
+            new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
+            new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
+        };
 
-       
-public Trader(HeadType arrowhead, FletchingType fletching, float leng)
+        //HeadType arrowhead, FletchingType fletching, float leng
+        public Trader(Arrow[] initialArrow)
             {
-                _arrowhead_type = arrowhead;
-                _fletching_type = fletching;
-                _length = leng;
+                arrows = initialArrow;
             }
-
-
-
-
-
-        Arrow[] arrows = {
-            new Array[] { HeadType.Steel, FletchingType.Goose, 100 },
-        new Array[] { HeadType.Wood, FletchingType.Plactic, 60 },
-            new Array[] { HeadType.Obsidian, FletchingType.Turkey, 78 }
-    };
-
-
-public float HasArrow()
+        
+public bool HasArrow(HeadType arrowhead, FletchingType fletching, float leng)
             {
-                //for (int i = 0; i < arrows.GetLength(0); i++)
+                for (int i = 0; i < this.arrows.Length; i++)
+
                 {
-                   // for (int j = 0; j < arrows.GetLength(1); j++)
+                //arrows[i];
+                i++;
+
+                // for (int j = 0; j < 2; j++)
+                {
+                    foreach (Arrow j in arrows)
                     {
-                        //Console.WriteLine(arrows[i, j]);
+                        i == j;
+                    
+                }
+                   
+                {
+                    //Console.WriteLine(arrows[i, j]);
+
+                   // if (arrowhead == HeadType )
+                    {
+
                     }
+                }
+                       // for (int j = 0; j < arrows.GetLength(1); j++)
+               // {
+                    //Console.WriteLine(arrows[i, j]);
+               // }
+                // for (int j = 0; j < arrows.GetLength(1); j++)
+                //{
+                    //Console.WriteLine(arrows[i, j]);
+                //}
                     /*foreach (int i in arrows)
                     {
 
                     }*/
                 }
 
-                    return GetCost();
+                    return false;
             }
-        //   public Trader (HeadType arrowhead_type, FletchingType fletching_type, float length)
-        //{
-        //_arrowhead_type = arrowhead_type;
-        //_fletching_type = fletching_type;
-        //_length = length;
-        //}
-
-
-        
-
 
 public float GetCost()
             {

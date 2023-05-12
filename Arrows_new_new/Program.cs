@@ -88,9 +88,9 @@ class Program
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-            var arrow = new Trader(arrowhead_type, fletching_type, lengthForCalculation);
-
-            float result = arrow.HasArrow();
+           var trader = new Trader();
+            //HeadType arrowhead, FletchingType fletching, float leng arrowhead_type, fletching_type, lengthForCalculation
+            float result = trader.HasArrow();
             Console.WriteLine(result);
         }
         else
