@@ -29,14 +29,12 @@ namespace Arrows
             return false;
         }
 
-        /*public float GetCost()
+        public float GetCost(HeadType arrowhead, FletchingType fletching, float leng)
                     {
-                        int headTypeArrResult = (int)this._arrowhead_type;
-                        int fletchTypeArrResult = (int)this._fletching_type;
-                        float sum = headTypeArrResult + fletchTypeArrResult + (_length * 0.05f);
+            float sum = (int)arrowhead + (int)fletching + (leng * 0.05f);
                         return sum;
                     }
-                }*/
+                }
     }
-}
+
 

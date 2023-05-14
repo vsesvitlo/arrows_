@@ -88,11 +88,17 @@ class Program
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-           
 
+            /*Arrow[] arrows = new[]
+        {
+            new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
+            new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
+            new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
+        };*/
 
             var trader = new Trader();
            
+
             bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
             Console.WriteLine(result);
         }
