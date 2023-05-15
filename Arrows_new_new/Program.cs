@@ -48,6 +48,12 @@ class Program
 
         HeadType arrowhead_type;
         FletchingType fletching_type;
+        Arrow[] arrows = new[]
+        {
+            new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
+            new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
+            new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
+        };
 
         if (((chooseHeadNumber == 1) || (chooseHeadNumber == 2) || (chooseHeadNumber == 3)) &&
             ((chooseFletchNumber == 1) || (chooseFletchNumber == 2) || (chooseFletchNumber == 3)) &&
@@ -89,18 +95,14 @@ class Program
                     break;
             }
 
-            /*Arrow[] arrows = new[]
-        {
-            new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
-            new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
-            new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
-        };*/
-
-            var trader = new Trader();
            
+            var trader = new Trader(arrows);
+         
 
             bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
             Console.WriteLine(result);
+            float sum = trader.GetCost(arrowhead_type, fletching_type, lengthForCalculation);
+            Console.WriteLine(sum);
         }
         else
         {

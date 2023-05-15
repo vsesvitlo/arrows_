@@ -3,12 +3,7 @@ namespace Arrows
 {
     public class Trader
     {
-        Arrow[] arrows = new[]
-        {
-            new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
-            new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
-            new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
-        };
+        Arrow[] arrows;
         public Trader(Arrow[] initialArrow)
         {
             arrows = initialArrow;
