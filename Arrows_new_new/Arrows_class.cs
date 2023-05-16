@@ -13,13 +13,13 @@ public class Arrow
         _fletching_type = fletching_type;
         _length = length;
     }
-    public Arrow[] arrows = new[]
+   /* public Arrow[] arrows = new[]
         {
             new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
             new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
             new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
         };
-
+   */
 }
 
 

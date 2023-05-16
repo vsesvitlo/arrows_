@@ -24,9 +24,9 @@ namespace Arrows
             return false;
         }
 
-        public float GetCost(HeadType arrowhead, FletchingType fletching, float leng)
+        public float GetCost(Arrow arrow)
                     {
-            float sum = (int)arrowhead + (int)fletching + (leng * 0.05f);
+            float sum = (int)arrow._arrowhead_type + (int)arrow._fletching_type + (arrow._length * 0.05f);
                         return sum;
                     }
                 }

@@ -54,8 +54,8 @@ class Program
             new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
             new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
         };
-
-        if (((chooseHeadNumber == 1) || (chooseHeadNumber == 2) || (chooseHeadNumber == 3)) &&
+     
+            if (((chooseHeadNumber == 1) || (chooseHeadNumber == 2) || (chooseHeadNumber == 3)) &&
             ((chooseFletchNumber == 1) || (chooseFletchNumber == 2) || (chooseFletchNumber == 3)) &&
             ((lengthForCalculation >= 60) && (lengthForCalculation <= 100)))
 
@@ -94,21 +94,21 @@ class Program
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-
            
             var trader = new Trader(arrows);
-         
-
             bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
             Console.WriteLine(result);
-            float sum = trader.GetCost(arrowhead_type, fletching_type, lengthForCalculation);
-            Console.WriteLine(sum);
+            var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
+           float sum = trader.GetCost(arrow);
+                Console.WriteLine(sum);
+         
         }
         else
         {
             Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs");
         }
     }
+
 
 
 
