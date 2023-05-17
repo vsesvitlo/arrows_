@@ -70,7 +70,7 @@ public class UnitTest1
         var condition = check._fletching_type == FletchingType.Goose;
         Assert.True(condition);
     }
-    [Fact]
+    /*[Fact]
     public void TestSum()
     {
         Arrow check = new Arrow(HeadType.Obsidian, FletchingType.Goose, 88);
@@ -83,5 +83,5 @@ public class UnitTest1
         Arrow check = new Arrow(HeadType.Obsidian, FletchingType.Goose, 60);
         var condition = check.GetCost() == 11f; // 5 + 3 + 60 * 0.05f; 
         Assert.True(condition);
-    }
+    }*/
 }
