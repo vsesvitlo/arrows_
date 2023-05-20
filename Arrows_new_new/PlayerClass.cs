@@ -4,21 +4,24 @@ namespace Arrows
 	public class PlayerClass
 	{
         Arrow[] arrowsInThePocket;
+        int countOfArrowsInThePocket;
+        float amountOfMoneyInThePocket;
+
         public PlayerClass(
-            Arrow[] purchaseArrows,
-            float amountOfMoney,
-            int countOfArrows
+            float amountOfMoney
 			)
 		{
-            arrowsInThePocket = purchaseArrows;
+            countOfArrowsInThePocket = 0;
+            amountOfMoneyInThePocket = amountOfMoney;
+            arrowsInThePocket = new Arrow[10];
         }
 
-        public bool BuyArrows(PlayerClass playerClass, Arrow[] purchaseArrows, float amountOfMoney,
-            float amountOfMoneyInThePocket = 1000, int countOfArrowsInThePocket = 0, sum)
+
+        public void BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
         {
-            if(amountOfMoneyInThePocket >= amountOfMoney)
+            //if(amountOfMoneyInThePocket >= amountOfMoney)
             {
-                amountOfMoneyInThePocket -= sum;
+              //  amountOfMoneyInThePocket -= sum;
                 countOfArrowsInThePocket += 1; //(?)
                //new Arrow[] {
                 //   new Arrow()
@@ -26,7 +29,7 @@ namespace Arrows
             }
 
 
-            return true;
+        
         }
         }
 }
