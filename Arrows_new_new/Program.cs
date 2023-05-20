@@ -24,27 +24,11 @@ class Program
             Console.WriteLine("Please, enter the correct values for choosing calculation");
         }
     }
-    //TODO: two modes of program - done
-    // 1 - Random
-    // 2 - Manual, which already is used
-    // Use methods RunRandomApplicationMode, RunManualApplicationMode
-
-   /* public static bool Equals(
-            Arrow[] arrows,
-            HeadType arrowhead_type,
-            FletchingType fletching_type,
-            int length)
- 
-    {
-
-        return false;
-    }*/
-
-
+    
 
 public static void RunManualApplicationMode()
     {
-        //TODO: move here
+     
         Console.WriteLine("What type of arrow`s head do you want? Please, choose: 1 - for steel, 2 - for wood, 3 - for odsidian");
         string chooseHead = Console.ReadLine();
         int.TryParse(chooseHead, out int chooseHeadNumber);

@@ -23,16 +23,15 @@ namespace Arrows
             for (int i = 0; i < this.arrows.Length; i++)
             {
                 Arrow arrow = arrows[i];
-                //Match();
+                //Match;
                 /*if(arrow._arrowhead_type == arrowhead &&
                    arrow._fletching_type == fletching &&
                    arrow._length == leng)
                 {
                     return true;
-                }
-            }*/
-                return Match;
+                }*/
             }
+            return Match;
         }
 
         public float GetCost(Arrow arrow)
