@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Xml.Linq;
 
@@ -28,11 +29,20 @@ class Program
     // 2 - Manual, which already is used
     // Use methods RunRandomApplicationMode, RunManualApplicationMode
 
+   /* public static bool Equals(
+            Arrow[] arrows,
+            HeadType arrowhead_type,
+            FletchingType fletching_type,
+            int length)
+ 
+    {
 
-    //Arrow[];
+        return false;
+    }*/
 
 
-    public static void RunManualApplicationMode()
+
+public static void RunManualApplicationMode()
     {
         //TODO: move here
         Console.WriteLine("What type of arrow`s head do you want? Please, choose: 1 - for steel, 2 - for wood, 3 - for odsidian");
@@ -105,16 +115,13 @@ class Program
              Console.WriteLine(sum);
             }
             Console.WriteLine("There is no array that you want. Sorry. Please, try another parametres");
-
         }
         else
         {
+        
             Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs");
         }
     }
-
-
-
 
     public static void RunRandomApplicationMode()
     //(length)
@@ -122,17 +129,27 @@ class Program
 
         int length = 100;
         Console.WriteLine(length);
-         Random choice = new Random();
-        int[] headArr = { (int)HeadType.Steel, (int)HeadType.Wood, (int)HeadType.Obsidian };
-        int[] fletchArr = { (int)FletchingType.Plastic, (int)FletchingType.Turkey, (int)FletchingType.Goose };
+        Random choice = new Random();
+        HeadType[] headArr = { HeadType.Steel, HeadType.Wood, HeadType.Obsidian };
+        FletchingType[] fletchArr = { FletchingType.Plastic, FletchingType.Turkey, FletchingType.Goose };
 
         int hIndex = choice.Next(headArr.Length);
         int fIndex = choice.Next(fletchArr.Length);
         Console.WriteLine(headArr[hIndex]);
         Console.WriteLine(fletchArr[fIndex]);
-        //Arrow arrowRandom = new Arrow(headArr[hIndex], fletchArr[fIndex], length);
-        int sumRandom = headArr[hIndex] + fletchArr[fIndex] + length;
-        Console.WriteLine(sumRandom);
+        Arrow arrowRandom = new Arrow(headArr[hIndex], fletchArr[fIndex], length);
+
+        Arrow[] arrows = new[]
+        {
+            new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
+            new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
+            new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
+        };
+
+        var trader = new Trader(arrows);
+        float sum = trader.GetCost(arrowRandom);
+        Console.WriteLine(sum);
+
     }
 
 }

@@ -29,7 +29,17 @@ namespace Arrows
             float sum = (int)arrow._arrowhead_type + (int)arrow._fletching_type + (arrow._length * 0.05f);
                         return sum;
                     }
-                }
+
+
+        public static bool Equals(
+        Arrow[] arrows,
+        HeadType arrowhead,
+        FletchingType fletching,
+        float leng)
+        {
+            return false;
+        }
     }
+}
 
 
