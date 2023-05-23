@@ -1,36 +1,35 @@
 ﻿using System;
-namespace Arrows
-{
+namespace Arrows;
+
 	public class PlayerClass
 	{
-        Arrow[] arrowsInThePocket;
-        int countOfArrowsInThePocket;
-        float amountOfMoneyInThePocket;
+    Arrow[] arrowsInThePocket;
+    int countOfArrowsInThePocket;
+    float amountOfMoneyInThePocket;
 
-        public PlayerClass(
-            float amountOfMoney
+    public PlayerClass(
+        float amountOfMoney
 			)
 		{
-            countOfArrowsInThePocket = 0;
-            amountOfMoneyInThePocket = amountOfMoney;
-            arrowsInThePocket = new Arrow[10];
-        }
+        countOfArrowsInThePocket = 0;
+        amountOfMoneyInThePocket = amountOfMoney;
+        arrowsInThePocket = new Arrow[10];
+    }
 
 
-        public void BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
+    public void BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
+    {
+        //if(amountOfMoneyInThePocket >= amountOfMoney)
         {
-            //if(amountOfMoneyInThePocket >= amountOfMoney)
-            {
-              //  amountOfMoneyInThePocket -= sum;
-                countOfArrowsInThePocket += 1; //(?)
-               //new Arrow[] {
-                //   new Arrow()
-               //};
-            }
+          //  amountOfMoneyInThePocket -= sum;
+            countOfArrowsInThePocket += 1; //(?)
+           //new Arrow[] {
+            //   new Arrow()
+           //};
+        }
 
 
-        
-        }
-        }
-}
+    
+    }
+    }
 

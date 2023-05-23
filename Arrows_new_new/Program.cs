@@ -102,7 +102,7 @@ public static void RunManualApplicationMode()
              Console.WriteLine(sum);
              Console.WriteLine("Please, pay here");
             }
-            else if (result != true)
+            else 
                 {
             Console.WriteLine("There is no array that you want. Sorry. Please, try another parametres");
             }

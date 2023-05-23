@@ -1,70 +1,45 @@
 ﻿using System;
-namespace Arrows
+namespace Arrows;
+
+public class Trader
 {
-    public class Trader
+    Arrow[] arrows;
+    
+    public Trader(Arrow[] initialArrow)
     {
-        //Arrow[] arrows;
-        Arrow[] arrows = new[]
-        {
-            new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
-            new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
-            new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
-        };
-        public Trader(Arrow[] initialArrow)
-        {
-            arrows = initialArrow;
-        }
-
-        public float GetCost(Arrow arrow)
-        {
-            float sum = (int)arrow._arrowhead_type + (int)arrow._fletching_type + (arrow._length * 0.05f);
-            return sum;
-        }
-
-
-        public bool HasArrow(HeadType arrowhead, FletchingType fletching, float leng)
-        {
-            for (int i = 0; i < arrows.Length - 1; i++)
-            {
-
-                Arrow arrow = arrows[i];
-                bool check = Matching.Match(arrow,
-                  arrows[i]._arrowhead_type,
-                  arrows[i]._fletching_type,
-                  arrows[i]._length);
-                if (check)
-                {
-                    return check;
-                }
-                //Match;
-                //Arrow arrow = arrows[i];
-                /*if(arrow._arrowhead_type == arrowhead &&
-                   arrow._fletching_type == fletching &&
-                   arrow._length == leng)
-                {
-                    return true;
-                }*/
-                //return check;
-             }
-                return false;
-        }
+        arrows = initialArrow;
     }
 
-    public class Matching
+    public float GetCost(Arrow arrow)
     {
-        public static bool Match(Arrow arrow, HeadType arrowhead, FletchingType fletching, float leng)
+        float sum = (int)arrow._arrowhead_type + (int)arrow._fletching_type + (arrow._length * 0.05f);
+        return sum;
+    }
+
+    public static bool Match(Arrow arrow, HeadType arrowhead, FletchingType fletching, float leng)
+    {
+        return arrow._arrowhead_type == arrowhead &&
+        arrow._fletching_type == fletching &&
+        arrow._length == leng;
+    }
+
+    public bool HasArrow(HeadType arrowhead, FletchingType fletching, float leng)
+    {
+        for (int i = 0; i < arrows.Length - 1; i++)
         {
 
-            if (arrow._arrowhead_type == arrowhead &&
-            arrow._fletching_type == fletching &&
-            arrow._length == leng)
+            Arrow arrow = arrows[i];
+            bool check = Trader.Match(arrow, arrowhead, fletching, leng);
+            if (check)
             {
-                return true;
+                return check;
             }
+            
+         }
             return false;
-        }
-
     }
 }
+
+
 
 
