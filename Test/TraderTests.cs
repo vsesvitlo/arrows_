@@ -34,13 +34,24 @@ namespace Test
             Assert.Equal(trader.GetCost(arrow), 12.4f);
         }
         [Fact]
-        public void TestSum()
+        public void TestCheckSum()
         {
             Trader check = new Trader(new Arrow[]
             {
-                new Arrow(HeadType.Obsidian, FletchingType.Goose, 88)
+                new Arrow(HeadType.Steel, FletchingType.Goose, 100)
             });
-            var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 88) == true; // 5 + 3 + 88 * 0.05f; 
+            var condition = check.HasArrow(HeadType.Steel, FletchingType.Goose, 100) == true; 
+            Assert.True(condition);
+        }
+
+        [Fact]
+        public void TestCheckSumNoAvailable()
+        {
+            Trader check = new Trader(new Arrow[]
+            {
+                new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)
+            });
+            var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 98) == false; 
             Assert.True(condition);
         }
     }

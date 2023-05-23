@@ -25,14 +25,14 @@ public class Trader
 
     public bool HasArrow(HeadType arrowhead, FletchingType fletching, float leng)
     {
-        for (int i = 0; i < arrows.Length - 1; i++)
+        for (int i = 0; i < arrows.Length; i++)
         {
 
             Arrow arrow = arrows[i];
             bool check = Trader.Match(arrow, arrowhead, fletching, leng);
             if (check)
             {
-                return check;
+                return true;
             }
             
          }
