@@ -42,6 +42,8 @@ public static void RunManualApplicationMode()
 
         HeadType arrowhead_type;
         FletchingType fletching_type;
+
+
         Arrow[] arrows = new[]
         {
             new Arrow( HeadType.Steel, FletchingType.Goose, 100 ),
@@ -90,6 +92,7 @@ public static void RunManualApplicationMode()
             }
            
             var trader = new Trader(arrows);
+
             bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
             
             if (result == true)
@@ -97,8 +100,12 @@ public static void RunManualApplicationMode()
              var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
              float sum = trader.GetCost(arrow);
              Console.WriteLine(sum);
+             Console.WriteLine("Please, pay here");
             }
+            else if (result != true)
+                {
             Console.WriteLine("There is no array that you want. Sorry. Please, try another parametres");
+            }
         }
         else
         {
