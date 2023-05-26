@@ -90,17 +90,22 @@ public static void RunManualApplicationMode()
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-           
+            
             var trader = new Trader(arrows);
 
             bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
-            
+            var player = new PlayerClass(100);
+            int countOfArrowsInThePocket = 0;
+            bool dealCheck = player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrowsInThePocket);
             if (result == true)
             {
              var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
              float sum = trader.GetCost(arrow);
+
              Console.WriteLine(sum);
              Console.WriteLine("Please, pay here");
+             Console.WriteLine(dealCheck);
+             Console.WriteLine("Now you have ${countOfArrowsInThePocket} arrows");
             }
             else 
                 {

@@ -1,16 +1,16 @@
 ﻿using System;
 namespace Arrows;
 
-	public class PlayerClass
-	{
+public class PlayerClass
+{
     Arrow[] arrowsInThePocket;
     int countOfArrowsInThePocket;
     float amountOfMoneyInThePocket;
 
     public PlayerClass(
         float amountOfMoney
-			)
-		{
+            )
+    {
         countOfArrowsInThePocket = 0;
         amountOfMoneyInThePocket = amountOfMoney;
         arrowsInThePocket = new Arrow[10];
@@ -18,18 +18,22 @@ namespace Arrows;
 
 
     public void BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
+       
     {
-        //if(amountOfMoneyInThePocket >= amountOfMoney)
+        float sumMoney = 100;
+        bool resultForCalculating = trader.HasArrow(arrowhead, fletching, leng);
+
+        if ((resultForCalculating == true)&&
+            (amountOfMoneyInThePocket >= sumMoney))
         {
-          //  amountOfMoneyInThePocket -= sum;
-            countOfArrowsInThePocket += 1; //(?)
-           //new Arrow[] {
-            //   new Arrow()
-           //};
+            var arrow = new Arrow(arrowhead, fletching, leng);
+            float sum = trader.GetCost(arrow);
+            amountOfMoneyInThePocket -= sum;
+            countOfArrowsInThePocket += count;
+            arrowsInThePocket = new Arrow[10 + count];
         }
-
-
+    }
+ }
     
-    }
-    }
+    
 
