@@ -11,9 +11,10 @@ public class PlayerClass
         float amountOfMoney
             )
     {
-        countOfArrowsInThePocket = 0;
+        countOfArrowsInThePocket = 10;
         amountOfMoneyInThePocket = amountOfMoney;
-        arrowsInThePocket = new Arrow[10];
+        arrowsInThePocket = new Arrow[countOfArrowsInThePocket];
+      
     }
 
 
@@ -30,8 +31,9 @@ public class PlayerClass
             float sum = trader.GetCost(arrow);
             amountOfMoneyInThePocket -= sum;
             countOfArrowsInThePocket += count;
-            arrowsInThePocket = new Arrow[10 + count];
+            arrowsInThePocket = new Arrow[countOfArrowsInThePocket];
         }
+       
     }
  }
     

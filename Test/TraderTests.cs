@@ -54,5 +54,15 @@ namespace Test
             var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 98) == false; 
             Assert.True(condition);
         }
+        [Fact]
+        public void TestCheckSumAvailable()
+        {
+            Trader check = new Trader(new Arrow[]
+            {
+                new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)
+            });
+            var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 78) == true;
+            Assert.True(condition);
+        }
     }
 }
