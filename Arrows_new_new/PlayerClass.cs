@@ -1,19 +1,22 @@
 ﻿using System;
+using System.Numerics;
+
 namespace Arrows;
 
 public class PlayerClass
 {
+    const int quiver = 10;
     Arrow[] arrowsInThePocket;
-    int countOfArrowsInThePocket;
-    float amountOfMoneyInThePocket;
+    public int countOfArrowsInThePocket;
+    public float amountOfMoneyInThePocket;
 
     public PlayerClass(
         float amountOfMoney
             )
     {
-        countOfArrowsInThePocket = 10;
+        countOfArrowsInThePocket = 0;
         amountOfMoneyInThePocket = amountOfMoney;
-        arrowsInThePocket = new Arrow[countOfArrowsInThePocket];
+        arrowsInThePocket = new Arrow[quiver];
       
     }
 
@@ -21,17 +24,19 @@ public class PlayerClass
     public void BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
        
     {
-        float sumMoney = 100;
         bool resultForCalculating = trader.HasArrow(arrowhead, fletching, leng);
 
         if ((resultForCalculating == true)&&
-            (amountOfMoneyInThePocket >= sumMoney))
+            (amountOfMoneyInThePocket > 0)&&
+           (countOfArrowsInThePocket <= quiver))
         {
             var arrow = new Arrow(arrowhead, fletching, leng);
             float sum = trader.GetCost(arrow);
             amountOfMoneyInThePocket -= sum;
+            count += 1;
             countOfArrowsInThePocket += count;
-            arrowsInThePocket = new Arrow[countOfArrowsInThePocket];
+            arrowsInThePocket[0] = arrow;
+        
         }
        
     }
