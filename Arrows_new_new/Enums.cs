@@ -16,5 +16,12 @@ public enum FletchingType
     }
 
 
+public enum BuyingResult
+{
+    NoSpaceInQuiver,
+    NoEnoughMoney,
+    NotAvailable,
+    Successful
+}
 
 

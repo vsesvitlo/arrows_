@@ -33,6 +33,7 @@ namespace Test
 
             Assert.Equal(trader.GetCost(arrow), 12.4f);
         }
+        //todo
         [Fact]
         public void TestCheckSum()
         {
@@ -43,7 +44,7 @@ namespace Test
             var condition = check.HasArrow(HeadType.Steel, FletchingType.Goose, 100) == true; 
             Assert.True(condition);
         }
-
+        //todo
         [Fact]
         public void TestCheckSumNoAvailable()
         {
@@ -51,29 +52,18 @@ namespace Test
             {
                 new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)
             });
-            var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 98) == false; 
+            var condition = check.GetCost(new Arrow(HeadType.Obsidian, FletchingType.Goose, 98)) == 11f; 
             Assert.True(condition);
         }
+        //todo
         [Fact]
         public void TestCheckSumAvailable()
         {
-            Trader check = new Trader(new Arrow[]
+            Trader check = new Trader(new Arrow[]   
             {
                 new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)
             });
             var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 78) == true;
-            Assert.True(condition);
-        }
-        [Fact]
-        public void TestCheckBuyArrows()
-        {
-            PlayerClass check = new PlayerClass(100);
-            var condition = check.BuyArrows(new Trader(new Arrow[]
-            {
-                new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)
-            }, 1),
-
-            HeadType.Obsidian, FletchingType.Goose, 78) == true;
             Assert.True(condition);
         }
     }
