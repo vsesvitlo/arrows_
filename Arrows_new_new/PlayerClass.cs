@@ -1,4 +1,7 @@
-﻿namespace Arrows;
+﻿using System;
+using System.Numerics;
+
+namespace Arrows;
 
 public class PlayerClass
 {
@@ -15,6 +18,7 @@ public class PlayerClass
       
     }
 
+
     public BuyingResult BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
        
     {
@@ -24,17 +28,36 @@ public class PlayerClass
             (amountOfMoneyInThePocket > 0)&&
            (countOfArrowsInThePocket + count <= quiver))
         {
-            //todo loop count of arrows to pocket
             var arrow = new Arrow(arrowhead, fletching, leng);
-            arrowsInThePocket[0] = arrow;//
-
-
+ 
+                for (int i = 0; i < quiver; i++)
+                {
+                    arrowsInThePocket[i] = arrow;
+                }
+                
+            
+            //todo loop count of arrows to pocket
+            
+       
             float sum = trader.GetCost(arrow);
             amountOfMoneyInThePocket -= sum * count;
             countOfArrowsInThePocket += count;
+
             return BuyingResult.Successful;
 
         }
+
+        if (countOfArrowsInThePocket + count > quiver)
+        {
+            return BuyingResult.NoSpaceInQuiver;
+        }
+
+        if (!resultForCalculating)
+        {
+            return BuyingResult.NotAvailable;
+        }
+
+        return BuyingResult.NoEnoughMoney;
     }
  }
     

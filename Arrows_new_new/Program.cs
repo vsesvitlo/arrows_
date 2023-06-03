@@ -111,13 +111,13 @@ public static void RunManualApplicationMode()
             }
             else 
                {
-            Console.WriteLine("There is no array that you want. Sorry. Please, try another parametres");
+            Console.WriteLine("There is no arrow that you want. Sorry. Please, try another parametres");
             }
         }
         else
         {
         
-            Console.WriteLine("Please, enter the correct values for choosing arow`s parametrs");
+            Console.WriteLine("Please, enter the correct values for choosing arrow`s parametrs");
         }
     }
 
