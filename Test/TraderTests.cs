@@ -64,5 +64,17 @@ namespace Test
             var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 78) == true;
             Assert.True(condition);
         }
+        [Fact]
+        public void TestCheckBuyArrows()
+        {
+            PlayerClass check = new PlayerClass(100);
+            var condition = check.BuyArrows(new Trader(new Arrow[]
+            {
+                new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)
+            }, 1),
+
+            HeadType.Obsidian, FletchingType.Goose, 78) == true;
+            Assert.True(condition);
+        }
     }
 }

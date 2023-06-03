@@ -36,9 +36,7 @@ public class PlayerClass
             count += 1;
             countOfArrowsInThePocket += count;
             arrowsInThePocket[0] = arrow;
-        
         }
-       
     }
  }
     

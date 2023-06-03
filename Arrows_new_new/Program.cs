@@ -96,24 +96,24 @@ public static void RunManualApplicationMode()
 
 
 
-            //bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
+            bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
             int countOfArrows = 0;
             var player = new PlayerClass(100);
          //   bool check = player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrowsInThePocket);
             player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrows);
-            //if (result == true)
-            //{
+            if (result == true)
+           {
            var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
            float sum = trader.GetCost(arrow);
             
              Console.WriteLine($"Please, pay here {sum}");
              Console.WriteLine($"Now you have {player.countOfArrowsInThePocket} arrows and {player.amountOfMoneyInThePocket} coins");
             }
-           // else 
-              //  {
-            //Console.WriteLine("There is no array that you want. Sorry. Please, try another parametres");
-            //}
-       // }
+            else 
+               {
+            Console.WriteLine("There is no array that you want. Sorry. Please, try another parametres");
+            }
+        }
         else
         {
         
