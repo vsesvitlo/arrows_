@@ -35,15 +35,16 @@ public class PlayerClass
         {
 
             var arrow = new Arrow(arrowhead, fletching, leng);
-            float sum = trader.GetCost(arrow);
-            amountOfMoneyInThePocket -= sum * count;
-            countOfArrowsInThePocket += count;
+            
 
             for (int i = 0; i <= countOfArrowsInThePocket + count; i++)
             {
                 arrowsInThePocket[i] = arrow;
             }
 
+            float sum = trader.GetCost(arrow);
+            amountOfMoneyInThePocket -= sum * count;
+            countOfArrowsInThePocket += count;
             //todo loop count of arrows to pocket
 
             return success;
