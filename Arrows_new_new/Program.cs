@@ -102,25 +102,25 @@ class Program
             bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
             int countOfArrows = 0;
             var player = new PlayerClass(100);
-            //   bool check = player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrowsInThePocket);
+            
             player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrows);
             if (result == true)
             {
                 var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
                 float sum = trader.GetCost(arrow);
 
-                Console.WriteLine($"Please, pay here {sum}");
+                Console.WriteLine($"{BuyingResult.Successful}{sum}");
                 Console.WriteLine($"Now you have {player.countOfArrowsInThePocket} arrows and {player.amountOfMoneyInThePocket} coins");
             }
             else
             {
-                Console.WriteLine("There is no arrow that you want. Sorry. Please, try another parametres");
+                Console.WriteLine($"{BuyingResult.NotAvailable}");
             }
         }
         else
         {
 
-            Console.WriteLine("Please, enter the correct values for choosing arrow`s parametrs");
+            Console.WriteLine($"{BuyingResult.NoCorrect}");
         }
 
 

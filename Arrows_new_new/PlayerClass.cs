@@ -34,8 +34,6 @@ public class PlayerClass
            (countOfArrowsInThePocket + count <= quiver))
         {
 
-          
-
             var arrow = new Arrow(arrowhead, fletching, leng);
             float sum = trader.GetCost(arrow);
             amountOfMoneyInThePocket -= sum * count;
@@ -46,9 +44,7 @@ public class PlayerClass
                 arrowsInThePocket[i] = arrow;
             }
 
-
             //todo loop count of arrows to pocket
-
 
             return success;
 

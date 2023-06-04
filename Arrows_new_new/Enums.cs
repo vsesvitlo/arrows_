@@ -28,8 +28,9 @@ public enum BuyingResult
     [Description("There is no arrow that you want. Sorry. Please, try another parametres")]
     NotAvailable = 3,
     [Description($"Please, pay here.")]
-    Successful = 4
-
+    Successful = 4,
+    [Description($"Please, enter the correct values for choosing arrow`s parametrs")]
+    NoCorrect = 5
 }
 
 
