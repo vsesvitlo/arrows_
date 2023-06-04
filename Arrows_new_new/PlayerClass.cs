@@ -15,49 +15,56 @@ public class PlayerClass
         countOfArrowsInThePocket = 0;
         amountOfMoneyInThePocket = amountOfMoney;
         arrowsInThePocket = new Arrow[quiver];
-      
+        
     }
 
 
     public BuyingResult BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
        
     {
+        BuyingResult nospace = BuyingResult.NoSpaceInQuiver;
+        BuyingResult notavailable = BuyingResult.NotAvailable;
+        BuyingResult nomoney = BuyingResult.NotEnoughMoney;
+        BuyingResult success = BuyingResult.Successful;
+
         bool resultForCalculating = trader.HasArrow(arrowhead, fletching, leng);
 
         if ((resultForCalculating == true)&&
             (amountOfMoneyInThePocket > 0)&&
            (countOfArrowsInThePocket + count <= quiver))
         {
+
+          
+
             var arrow = new Arrow(arrowhead, fletching, leng);
- 
-                for (int i = 0; i < quiver; i++)
-                {
-                    arrowsInThePocket[i] = arrow;
-                }
-                
-            
-            //todo loop count of arrows to pocket
-            
-       
             float sum = trader.GetCost(arrow);
             amountOfMoneyInThePocket -= sum * count;
             countOfArrowsInThePocket += count;
 
-            return BuyingResult.Successful;
+            for (int i = 0; i <= countOfArrowsInThePocket + count; i++)
+            {
+                arrowsInThePocket[i] = arrow;
+            }
+
+
+            //todo loop count of arrows to pocket
+
+
+            return success;
 
         }
 
         if (countOfArrowsInThePocket + count > quiver)
         {
-            return BuyingResult.NoSpaceInQuiver;
+            return nospace;//BuyingResult.NoSpaceInQuiver;
         }
 
         if (!resultForCalculating)
         {
-            return BuyingResult.NotAvailable;
+            return notavailable;
         }
 
-        return BuyingResult.NoEnoughMoney;
+        return nomoney;
     }
  }
     

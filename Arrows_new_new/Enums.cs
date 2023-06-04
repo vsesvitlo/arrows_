@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Numerics;
+
 namespace Arrows;
 
 public enum HeadType
@@ -18,10 +21,15 @@ public enum FletchingType
 
 public enum BuyingResult
 {
-    NoSpaceInQuiver,
-    NoEnoughMoney,
-    NotAvailable,
-    Successful
+    [Description("There is no space in your quiver. Sorry")]
+    NoSpaceInQuiver = 1,
+    [Description("Unfortunately, the sum of your order is more than you have.")]
+    NotEnoughMoney = 2,
+    [Description("There is no arrow that you want. Sorry. Please, try another parametres")]
+    NotAvailable = 3,
+    [Description($"Please, pay here.")]
+    Successful = 4
+
 }
 
 

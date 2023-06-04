@@ -24,11 +24,11 @@ class Program
             Console.WriteLine("Please, enter the correct values for choosing calculation");
         }
     }
-    
 
-public static void RunManualApplicationMode()
+
+    public static void RunManualApplicationMode()
     {
-     
+
         Console.WriteLine("What type of arrow`s head do you want? Please, choose: 1 - for steel, 2 - for wood, 3 - for odsidian");
         string chooseHead = Console.ReadLine();
         int.TryParse(chooseHead, out int chooseHeadNumber);
@@ -50,10 +50,13 @@ public static void RunManualApplicationMode()
             new Arrow( HeadType.Wood, FletchingType.Plastic, 60 ),
             new Arrow( HeadType.Obsidian, FletchingType.Turkey, 78 )
         };
-     
-            if (((chooseHeadNumber == 1) || (chooseHeadNumber == 2) || (chooseHeadNumber == 3)) &&
-            ((chooseFletchNumber == 1) || (chooseFletchNumber == 2) || (chooseFletchNumber == 3)) &&
-            ((lengthForCalculation >= 60) && (lengthForCalculation <= 100)))
+
+
+
+
+        if (((chooseHeadNumber == 1) || (chooseHeadNumber == 2) || (chooseHeadNumber == 3)) &&
+        ((chooseFletchNumber == 1) || (chooseFletchNumber == 2) || (chooseFletchNumber == 3)) &&
+        ((lengthForCalculation >= 60) && (lengthForCalculation <= 100)))
 
         {
             switch (chooseHeadNumber)
@@ -90,7 +93,7 @@ public static void RunManualApplicationMode()
                     Console.WriteLine("Please, enter the correct values for choosing arow`s fletch parametrs");
                     break;
             }
-            
+
             var trader = new Trader(arrows);
 
 
@@ -99,29 +102,31 @@ public static void RunManualApplicationMode()
             bool result = trader.HasArrow(arrowhead_type, fletching_type, lengthForCalculation);
             int countOfArrows = 0;
             var player = new PlayerClass(100);
-         //   bool check = player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrowsInThePocket);
+            //   bool check = player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrowsInThePocket);
             player.BuyArrows(trader, arrowhead_type, fletching_type, lengthForCalculation, countOfArrows);
             if (result == true)
-           {
-           var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
-           float sum = trader.GetCost(arrow);
-            
-             Console.WriteLine($"Please, pay here {sum}");
-             Console.WriteLine($"Now you have {player.countOfArrowsInThePocket} arrows and {player.amountOfMoneyInThePocket} coins");
+            {
+                var arrow = new Arrow(arrowhead_type, fletching_type, lengthForCalculation);
+                float sum = trader.GetCost(arrow);
+
+                Console.WriteLine($"Please, pay here {sum}");
+                Console.WriteLine($"Now you have {player.countOfArrowsInThePocket} arrows and {player.amountOfMoneyInThePocket} coins");
             }
-            else 
-               {
-            Console.WriteLine("There is no arrow that you want. Sorry. Please, try another parametres");
+            else
+            {
+                Console.WriteLine("There is no arrow that you want. Sorry. Please, try another parametres");
             }
         }
         else
         {
-        
+
             Console.WriteLine("Please, enter the correct values for choosing arrow`s parametrs");
         }
+
+
     }
 
-    public static void RunRandomApplicationMode()
+public static void RunRandomApplicationMode()
     //(length)
     {
 
