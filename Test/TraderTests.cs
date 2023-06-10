@@ -63,7 +63,7 @@ namespace Test
             {
                 new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)
             });
-            var condition = check.HasArrow(HeadType.Obsidian, FletchingType.Goose, 78) == true;
+            var condition = check.GetCost(new Arrow(HeadType.Obsidian, FletchingType.Goose, 78)) == 11.9f;
             Assert.True(condition);
         }
     }

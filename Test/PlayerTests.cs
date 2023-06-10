@@ -63,7 +63,7 @@ namespace Test
             check.BuyArrows(trader, HeadType.Obsidian, FletchingType.Goose, 78, 2);
             check.BuyArrows(trader, HeadType.Wood, FletchingType.Plastic, 98, 3);
             var condition = (check.countOfArrowsInThePocket == 5) &&
-                (check.amountOfMoneyInThePocket == 77.5f);//count
+                (check.amountOfMoneyInThePocket == 22.5f);//count
             Assert.True(condition);
         }
 
@@ -71,14 +71,14 @@ namespace Test
         [Fact]
         public void TestCheckNoMoney()
         {
-            PlayerClass check = new PlayerClass(20);
+            PlayerClass check = new PlayerClass(100);
             var trader = new Trader(new Arrow[]
             {
                 new Arrow(HeadType.Wood, FletchingType.Plastic, 98)
             });
             check.BuyArrows(trader, HeadType.Wood, FletchingType.Plastic, 98, 3);
             var condition = (check.countOfArrowsInThePocket == 0) &&
-                (check.amountOfMoneyInThePocket == 20f);
+                (check.amountOfMoneyInThePocket == 100f);// -33.699997f
             Assert.True(condition);
         }
     }

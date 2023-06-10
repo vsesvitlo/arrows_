@@ -20,7 +20,7 @@ public class PlayerClass
 
 
     public BuyingResult BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
-       
+
     {
         BuyingResult nospace = BuyingResult.NoSpaceInQuiver;
         BuyingResult notavailable = BuyingResult.NotAvailable;
@@ -28,42 +28,61 @@ public class PlayerClass
         BuyingResult success = BuyingResult.Successful;
 
         bool resultForCalculating = trader.HasArrow(arrowhead, fletching, leng);
+        var arrow = new Arrow(arrowhead, fletching, leng);
+        float sum = trader.GetCost(arrow);
 
-        if ((resultForCalculating == true)&&
-            (amountOfMoneyInThePocket > 0)&&
+
+        //arrowsInThePocket.Length
+        //todo loop count of arrows to pocket
+        if (
+           (resultForCalculating == true) &&
+           (amountOfMoneyInThePocket > 0) &&
            (countOfArrowsInThePocket + count <= quiver))
         {
-
-            var arrow = new Arrow(arrowhead, fletching, leng);
-            
-
-            for (int i = 0; i <= countOfArrowsInThePocket + count; i++)
+            for (int i = 0; i <= (countOfArrowsInThePocket + count) - 1; i++)
             {
                 arrowsInThePocket[i] = arrow;
+                //float initialMoney = amountOfMoneyInThePocket;
+                if ((amountOfMoneyInThePocket > (sum * count)) && (amountOfMoneyInThePocket != 0))
+                {
+
+                    amountOfMoneyInThePocket -= sum * count;
+                    countOfArrowsInThePocket += count;
+
+
+                    
+                }
+
+
+                return success;
             }
-
-            float sum = trader.GetCost(arrow);
-            amountOfMoneyInThePocket -= sum * count;
-            countOfArrowsInThePocket += count;
-            //todo loop count of arrows to pocket
-
-            return success;
-
+            return nomoney;
         }
 
-        if (countOfArrowsInThePocket + count > quiver)
+
+        /*if ((amountOfMoneyInThePocket == 0) || (amountOfMoneyInThePocket < (sum * count)))
         {
-            return nospace;//BuyingResult.NoSpaceInQuiver;
+            return nomoney;
         }
-
+        if ((amountOfMoneyInThePocket == 0) || (amountOfMoneyInThePocket < (sum * count)))
+                {
+                    amountOfMoneyInThePocket = initialMoney;
+                }
+                return nomoney;
+       */
         if (!resultForCalculating)
         {
             return notavailable;
         }
-
-        return nomoney;
+        if (countOfArrowsInThePocket + count > quiver)
+        {
+            return nospace;//BuyingResult.NoSpaceInQuiver;
+        }
+        return notavailable;
     }
- }
+
+    }
+ 
     
     
 
