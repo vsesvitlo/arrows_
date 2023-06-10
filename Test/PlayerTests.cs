@@ -71,14 +71,14 @@ namespace Test
         [Fact]
         public void TestCheckNoMoney()
         {
-            PlayerClass check = new PlayerClass(100);
+            PlayerClass check = new PlayerClass(10);
             var trader = new Trader(new Arrow[]
             {
                 new Arrow(HeadType.Wood, FletchingType.Plastic, 98)
             });
             check.BuyArrows(trader, HeadType.Wood, FletchingType.Plastic, 98, 3);
             var condition = (check.countOfArrowsInThePocket == 0) &&
-                (check.amountOfMoneyInThePocket == 100f);// -33.699997f
+                (check.amountOfMoneyInThePocket == 10f);// -33.699997f
             Assert.True(condition);
         }
     }
