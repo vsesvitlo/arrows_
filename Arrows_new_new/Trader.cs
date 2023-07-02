@@ -27,14 +27,12 @@ public class Trader
     {
         for (int i = 0; i < arrows.Length; i++)
         {
-
             Arrow arrow = arrows[i];
             bool check = Trader.Match(arrow, arrowhead, fletching, leng);
             if (check)
             {
                 return true;
-            }
-            
+            } 
          }
             return false;
     }

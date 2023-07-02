@@ -17,8 +17,6 @@ public class PlayerClass
         arrowsInThePocket = new Arrow[quiver];
 
     }
-
-
     public BuyingResult BuyArrows(Trader trader, HeadType arrowhead, FletchingType fletching, float leng, int count)
 
     {   bool resultForCalculating = trader.HasArrow(arrowhead, fletching, leng);
@@ -31,12 +29,9 @@ public class PlayerClass
         }
         if (countOfArrowsInThePocket + count > quiver)
         {
-            return BuyingResult.NoSpaceInQuiver;//BuyingResult.NoSpaceInQuiver;
+            return BuyingResult.NoSpaceInQuiver;
         }
 
-        //arrowsInThePocket.Length
-        //todo loop count of arrows to pocket
-        //if (amountOfMoneyInThePocket - (sum +count) > 0)
         if (amountOfMoneyInThePocket > (sum * count))
         {
             for (int i = 0; i <= (countOfArrowsInThePocket + count) - 1; i++)
